@@ -42,15 +42,14 @@ print(f'blabla {val}')
 
 # ----------------------------------------------------------------------
 ЛИСТЫ:
-	myList[1:2] - возвращает значения под индексами 1..2
+	myList[start:stop:step]
 	myList.extend(list) - добавляет лист на конец другого листа
 	myList.insert(index,var)
 	myList.remove(var)
 	myList.clear()
-	myList.pop() - удаляет последнее значение листа
+	myList.pop(index)
 	myList.count(var)
 	myList.reverse()
-	map(func, myList) - возвращает list с примененным к каждому элементу func
 	
 	ЦИКЛ FOR
 		for i, num in enumerate(myList): - будет проходиться и по индексу, и по члену листа
@@ -61,12 +60,12 @@ print(f'blabla {val}')
 		
 # ----------------------------------------------------------------------
 СЛОВАРИ: 
-	d = {"val1":"res1" , "val2":"res2"}
+	d = {"val1":"res1", "val2":"res2"}
 	res1 = d.get("val1")
 
 # ----------------------------------------------------------------------
 ИМПОРТ ФАЙЛА:
-	file = open(path,"a") - "a"-adding/"r"-reading/"w"-writing/"r+"-хз
+	file = open(path, "a", encoding="utf-8") - "a"-adding/"r"-reading/"w"-writing/"r+"-хз
 	file.close()
 	file.readable()
 	file.read()
@@ -75,13 +74,20 @@ print(f'blabla {val}')
 	file.write(var)
 
 # ----------------------------------------------------------------------
-МАГИЯ В ОДНУ СТРОКУ (list comprehension):
+МАГИЯ В ОДНУ СТРОКУ:
 	Работает с листами, словарями, сетами
 	newList1 = [expression for member in iterable (if conditional)] - if фильтрует 
 	newList2 = [expression (if else conditional) for member in iterable] - if else модифицирует
 	
 	ex1: list1 = [i for i in range(100) if i%3 ==0]
 	ex2: dict1 = {var:var**3 for var in range(N) if var % 2 != 0}
+	
+	zip([1,2], [3,4]) -> [(1,3), (2,4)]
+	zip(*iter) -> unzip (звездочка важна!)
+	map(func, myList) - возвращает list с примененным к каждому элементу func
+	any([1>2, 6==5]) - True если что то true
+	all([bool1, bool2, ...]) - понятно 
+	dict(zip(iter1, iter2)) - быстрый конструктор словарей
 
 # ----------------------------------------------------------------------
 МАГИЧЕСКИЕ МЕТОДЫ (Dunder methods):
@@ -132,6 +138,7 @@ NUMPY
 	РЕДАКТ МАТРИЦ
 		nums = np.delete(nums, j) - возвращает матрицу nums с удаленным элементом с индексом j
 		nums = np.append(nums, elem) - добавляет elem в конец nums
+		np_arr.reshape() - меняет форму матрицы
 
 # ----------------------------------------------------------------------
 SYMPY
@@ -197,6 +204,26 @@ PYGAME
 		pixObj = pg.PixelArray(DSURF) - работает как двойная матрица с цветами
     ЭВЕНТЫ
         mp = pg.mouse.get_pressed() - возвр лист с True/False по каждой кнопке на мыше
+
+# ----------------------------------------------------------------------
+PYINPUTPLUS
+	import pyinputplus as pyip 
+	pyip.inputStr()
+	pyip.inputNum()
+	pyip.inputChoice() - ?
+	pyip.inputMenu() - ?
+	pyip.inputDatetime()
+	pyip.inputYesNo(yesVal='yes', noVal='no')
+	pyip.inputBool()
+	pyip.inputEmail()
+	pyip.inputFilepath()
+	pyip.inputPassword()
+	pyip.inputCustom(func) - кастомный ввод, функция должна вызывать ошибку. если неверно, или возвращать верный вариант
+	АРГУМЕНТЫ
+		prompt='' - подсказка
+		limit=2 - лимит на количество вводов, затем вызывает ошибку
+		timeout=10 - лимит на время в секундах, затем вызывает ошибку
+		default=1010 - дефолтное значение, тогда limit и timeout не вызовут ошибку
 
 # ----------------------------------------------------------------------
 PYSIMPLEGUI
