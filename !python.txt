@@ -4,322 +4,404 @@ print(f'blabla {val}')
 
 # ----------------------------------------------------------------------
 ОПЕРАТОРЫ:
-	% - mod/остаток
-	// - деление без остатка
-	!= - неравенство
-	~ - инвервия (bool)
+    % - mod/остаток
+    // - деление без остатка
+    != - неравенство
+    ~ - инвервия (bool)
 
 # ----------------------------------------------------------------------
 СТРОКИ: 
-	Name.lower() / Name.upper()
-	Name.index("N") - индекс символа N в строке
-	Name.replace("smth1","smth2")
-	inp = input("Hint")
-	str.split(separator) - возвращает лист, где str разделен сепаратором
-	
-	ОФОРМЛЕНИЯ ЧИСЛА КАК СТРОКИ
-		x = 1234.5678
-		format(x, '0.2f') => '1234.57'
-		format(x, '10.1f') => '    1234.6'
-		format(x, '<10.1f') => '1234.6    '
-		format(x, '^10.1f') => '  1234.6  ' - выравнивание по центру
-		format(x, ',') => '1,234.5678' - включение разделения разрядов
-		format(x, '0,.1f') => '1,234.6'
-		format(x, 'e') => '1.2345678e+3'
-		format(x, 0.2E) => '1.23E+3'
-	
-	СОЕДИНЕНИЕ ЛИСТА СТРОК В ОДНУ СТРОКУ
-		mtStr = ' '.join(listOfStr)
+    Name.lower() / Name.upper()
+    Name.index("N") - индекс символа N в строке
+    Name.replace("smth1","smth2")
+    inp = input("Hint")
+    str.split(separator) - возвращает лист, где str разделен сепаратором
+    
+    ОФОРМЛЕНИЯ ЧИСЛА КАК СТРОКИ
+        x = 1234.5678
+        format(x, '0.2f') => '1234.57'
+        format(x, '10.1f') => '    1234.6'
+        format(x, '<10.1f') => '1234.6    '
+        format(x, '^10.1f') => '  1234.6  ' - выравнивание по центру
+        format(x, ',') => '1,234.5678' - включение разделения разрядов
+        format(x, '0,.1f') => '1,234.6'
+        format(x, 'e') => '1.2345678e+3'
+        format(x, 0.2E) => '1.23E+3'
+    
+    СОЕДИНЕНИЕ ЛИСТА СТРОК В ОДНУ СТРОКУ
+        mtStr = ' '.join(listOfStr)
 
 # ----------------------------------------------------------------------
 ЧИСЛА:
-	min(array) / max(array)
-	round(num, decimal_places)
-	int(num, base) - переводит число в 10-систему счисления из base-системы счисления
-	hex(num) - переводит число в 16-систему счисления
-	oct(num) - переводит число в 8-систему счисления
-	bin(num) - переводит число в 2-систему счисления
+    min(array) / max(array)
+    round(num, decimal_places)
+    int(num, base) - переводит число в 10-систему счисления из base-системы счисления
+    hex(num) - переводит число в 16-систему счисления
+    oct(num) - переводит число в 8-систему счисления
+    bin(num) - переводит число в 2-систему счисления
 
 # ----------------------------------------------------------------------
 ЛИСТЫ:
-	myList[start:stop:step]
-	myList.extend(list) - добавляет лист на конец другого листа
-	myList.insert(index,var)
-	myList.remove(var)
-	myList.clear()
-	myList.pop(index)
-	myList.count(var)
-	myList.reverse()
-	
-	ЦИКЛ FOR
-		for i, num in enumerate(myList): - будет проходиться и по индексу, и по члену листа
-	
-	СЧЕТЧИК КОЛИЧЕСТВА ОДИНАКОВЫХ ЭЛЕМЕНТОВ
-		from collections import Counter
-		counter = Counter(myList) - вернет словарь {элемент: количество}
-		
+    myList[start:stop:step]
+    myList.extend(list) - добавляет лист на конец другого листа
+    myList.insert(index,var)
+    myList.remove(var)
+    myList.clear()
+    myList.pop(index)
+    myList.count(var)
+    myList.reverse()
+    
+    ЦИКЛ FOR
+        for i, num in enumerate(myList): - будет проходиться и по индексу, и по члену листа
+    
+    СЧЕТЧИК КОЛИЧЕСТВА ОДИНАКОВЫХ ЭЛЕМЕНТОВ
+        from collections import Counter
+        counter = Counter(myList) - вернет словарь {элемент: количество}
+        
 # ----------------------------------------------------------------------
 СЛОВАРИ: 
-	d = {"val1":"res1", "val2":"res2"}
-	res1 = d.get("val1")
+    d = {"val1":"res1", "val2":"res2"}
+    res1 = d.get("val1")
 
 # ----------------------------------------------------------------------
 ИМПОРТ ФАЙЛА:
-	file = open(path, "a", encoding="utf-8") - "a"-adding/"r"-reading/"w"-writing/"r+"-хз
-	file.close()
-	file.readable()
-	file.read()
-	file.readline()
-	file.readlines() - вернет лист
-	file.write(var)
+    file = open(path, "a", encoding="utf-8") - "a"-adding/"r"-reading/"w"-writing/"r+"-хз
+    file.close()
+    file.readable()
+    file.read()
+    file.readline()
+    file.readlines() - вернет лист
+    file.write(var)
 
 # ----------------------------------------------------------------------
 МАГИЯ В ОДНУ СТРОКУ:
-	Работает с листами, словарями, сетами
-	newList1 = [expression for member in iterable (if conditional)] - if фильтрует 
-	newList2 = [expression (if else conditional) for member in iterable] - if else модифицирует
-	
-	ex1: list1 = [i for i in range(100) if i%3 ==0]
-	ex2: dict1 = {var:var**3 for var in range(N) if var % 2 != 0}
-	
-	zip([1,2], [3,4]) -> [(1,3), (2,4)]
-	zip(*iter) -> unzip (звездочка важна!)
-	map(func, myList) - возвращает list с примененным к каждому элементу func
-	any([1>2, 6==5]) - True если что то true
-	all([bool1, bool2, ...]) - понятно 
-	dict(zip(iter1, iter2)) - быстрый конструктор словарей
+    Работает с листами, словарями, сетами
+    newList1 = [expression for member in iterable (if conditional)] - if фильтрует 
+    newList2 = [expression (if else conditional) for member in iterable] - if else модифицирует
+    
+    ex1: list1 = [i for i in range(100) if i%3 ==0]
+    ex2: dict1 = {var:var**3 for var in range(N) if var % 2 != 0}
+    
+    zip([1,2], [3,4]) -> [(1,3), (2,4)]
+    zip(*iter) -> unzip (звездочка важна!)
+    map(func, myList) - возвращает list с примененным к каждому элементу func
+    any([1>2, 6==5]) - True если что то true
+    all([bool1, bool2, ...]) - понятно 
+    dict(zip(iter1, iter2)) - быстрый конструктор словарей
 
 # ----------------------------------------------------------------------
 МАГИЧЕСКИЕ МЕТОДЫ (Dunder methods):
-	__init__(self, arg) - метод инициализации объекта
-	__new__(self, arg) - выполнится первым при инициализации, arg переданы от __init__
-	__del__ - вроде как удоляет объект, но это не точно (ПРОГУГЛИТЬ!!!)
-	__eq__(self, other) / __ne__ / __lt__ / __gt__ / __le__ / __ge__ это == / != / < / > / <= / >= соответственно
-	__abs__(self) - для функции abs() 
-	__call__(self, arg) - вызов самого объекта без методов
-	__add__ - указывает как складывать данный класс 
-	__repr__ - указывает как данный класс будет отображаться 
+    __init__(self, arg) - метод инициализации объекта
+    __new__(self, arg) - выполнится первым при инициализации, arg переданы от __init__
+    __del__ - вроде как удоляет объект, но это не точно (ПРОГУГЛИТЬ!!!)
+    __eq__(self, other) / __ne__ / __lt__ / __gt__ / __le__ / __ge__ это == / != / < / > / <= / >= соответственно
+    __abs__(self) - для функции abs() 
+    __call__(self, arg) - вызов самого объекта без методов
+    __add__ - указывает как складывать данный класс 
+    __repr__ - указывает как данный класс будет отображаться 
+
+# ----------------------------------------------------------------------
+REGULAR EXPRESSIONS
+	import re
+	phone_reg = re.compile(r'\d\d\d-\d\d\d-\d\d\d\d') - создание маски Regex
+	match_phone = phone_reg.search(text) - поиск 
+	match_phone.group() - вывод группы ()
+	match_phones = phone_reg.findall(text)
+	
+REG EXP SYNTAX
+	\d - это цифра (digit)
+	\D - любые кроме \d
+	\w - буква, цифра или _ 
+	\W - любое кроме \w
+	\s - пробел, таб, новая строка
+	\S - любое кроме \s
+	. - любой символ, кроме новой строки
+	[abcdABCD] - класс только с этими буквами
+	[^abcdABCD] - класс со всеми, кроме этих букв
+	[0-5] - от 0 до 5
+	[a-zA-Z] - все буквы латинского алфавита
+	
+	(\d\d\d) - это группа выражений
+	. ^ $ * + ? { } [ ] \ | ( ) имеют особые значения.
+	(\d)? - это когда группа может быть 0 и 1
+	(\d)* - это когда группа может быть 0 и больше
+	(\d)+ - это когда группа может быть 1 и больше
+	(\d){N} - это когда N группа
+	(\d){min,max} - ну понятно
+	^\d - начинается с \d
+	\d$ - кончается на \d
+	
+	(.*) - что угодно
+	(<.*?>) - что угодно или ничего в <...>
 
 # ----------------------------------------------------------------------
 MATPLOTLIB
-	from matplotlib import pyplot as plt
-	
-	ГРАФИКИ
-		plt.plot(x,y) - рисует график
-		plt.yscale() / plt.yscale() - log, linear, symlog, logit
-		plt.xlim() / plt.ylim()
-		plt.ylabel('text') / plt.xlabel('text')
-		plt.grid(True)
-		plt.axhline(coord, color=(0,0,0)) / plt.axvline(coord, color=(0,0,0)) - horisontal или vertical линии
-		plt.imshow(array) - хз что делает, не помню
-		plt.show() - показывает график, если не в Spyder
-	ЛЕГЕНДА
-		red_patch = mpatches.Patch(color='red', label='text')
-		plt.legend(handles=[red_patch])
+    from matplotlib import pyplot as plt
+    
+    ГРАФИКИ
+        plt.plot(x,y) - рисует график
+        plt.yscale() / plt.yscale() - log, linear, symlog, logit
+        plt.xlim() / plt.ylim()
+        plt.ylabel('text') / plt.xlabel('text')
+        plt.grid(True)
+        plt.axhline(coord, color=(0,0,0)) / plt.axvline(coord, color=(0,0,0)) - horisontal или vertical линии
+        plt.imshow(array) - хз что делает, не помню
+        plt.show() - показывает график, если не в Spyder
+    ЛЕГЕНДА
+        red_patch = mpatches.Patch(color='red', label='text')
+        plt.legend(handles=[red_patch])
 
 # ----------------------------------------------------------------------
 NUMPY
-	import numpy as np
-	
-	РАНДОМНЫЕ ШТУКИ
-		np.random.rand(a, b) - рандомная матрица axb с элементами от 0 до 1
-		np.random.choice(list) - рандомный выбор из списка
-		np.random.shuffle(list) - вернёт перемеш лист
+    import numpy as np
+    
+    РАНДОМНЫЕ ШТУКИ
+        np.random.rand(a, b) - рандомная матрица axb с элементами от 0 до 1
+        np.random.choice(list) - рандомный выбор из списка
+        np.random.shuffle(list) - вернёт перемеш лист
 
-	СОЗДАНИЕ МАТРИЦ
-		array = np.empty(shape) - создает мультипространственный лист с формой shape
-		nums = np.arange() - работает так же, как range
-		rand_points = np.random.rand(shape) - создает мульти матрицу с ранд числами от 0 до 1
+    СОЗДАНИЕ МАТРИЦ
+        array = np.empty(shape) - создает мультипространственный лист с формой shape
+        nums = np.arange() - работает так же, как range
+        rand_points = np.random.rand(shape) - создает мульти матрицу с ранд числами от 0 до 1
 
-	ИНФО О МАТРИЦЕ
-		tuple = array.shape - возвращает форму матрицы array
-		np.array_equal(array1, array2) - лог. да/нет, если равны или нет
+    ИНФО О МАТРИЦЕ
+        tuple = array.shape - возвращает форму матрицы array
+        np.array_equal(array1, array2) - лог. да/нет, если равны или нет
 
-	РЕДАКТ МАТРИЦ
-		nums = np.delete(nums, j) - возвращает матрицу nums с удаленным элементом с индексом j
-		nums = np.append(nums, elem) - добавляет elem в конец nums
-		np_arr.reshape() - меняет форму матрицы
+    РЕДАКТ МАТРИЦ
+        nums = np.delete(nums, j) - возвращает матрицу nums с удаленным элементом с индексом j
+        nums = np.append(nums, elem) - добавляет elem в конец nums
+        np_arr.reshape() - меняет форму матрицы
 
 # ----------------------------------------------------------------------
 SYMPY
-	import sympy as sp
-	sp.init_printing(use_latex=True) - включает Latex режим отображения
+    import sympy as sp
+    sp.init_printing(use_latex=True) - включает Latex режим отображения
 
     ФУНКЦИИ 
-		x,y = sp.symbols('x y') - создание двух символьных переменных
-		func = x**2 + y**2 - создание функции (достаточно привычно)
-		func.subs(x, num) - заменяет x в func на num
-		sp.factor(x**2-y**2) - разбивает на перемножение скобок
-		expr = sum([x**i for i in range(0, 6)]) => x**5 + x**4 + x**3 + x**2 + x + 1
-		sp.expand(f) - раскрыть скобки
-		sp.collect(expr,var) - собрать коэффициенты при одинаковых степенях переменной
-		sp.cancel(expr) - приводит рациональное выражение к общему знаменателю
-		sp.apart(expr) - разложение на простые дроби
+        x,y = sp.symbols('x y') - создание двух символьных переменных
+        func = x**2 + y**2 - создание функции (достаточно привычно)
+        func.subs(x, num) - заменяет x в func на num
+        sp.factor(x**2-y**2) - разбивает на перемножение скобок
+        expr = sum([x**i for i in range(0, 6)]) => x**5 + x**4 + x**3 + x**2 + x + 1
+        sp.expand(f) - раскрыть скобки
+        sp.collect(expr,var) - собрать коэффициенты при одинаковых степенях переменной
+        sp.cancel(expr) - приводит рациональное выражение к общему знаменателю
+        sp.apart(expr) - разложение на простые дроби
 
     КОМПЛЕСНЫЕ ЧИСЛА (заглавная I)
-		z=a+b*I
-		sp.re(z) и sp.im(z) - понятно
-		sp.Abs(z) и sp.arg(z) - понятно
-		sp.conjugate(z) - компл сопр
+        z=a+b*I
+        sp.re(z) и sp.im(z) - понятно
+        sp.Abs(z) и sp.arg(z) - понятно
+        sp.conjugate(z) - компл сопр
 
     УРАВНЕНИЯ 
-		sp.solve(expr(x), x)
-		sp.Eq(expr1,expr2) - выражение для уравнения expr1 = expr2
-		sp.solveset(equasion, var) - корни выражения для var
-		sp.real_roots(expr) аналогично sp.Eq(expr, 0)
-		sp.linsolve([expr1, expr2],x,y) - приравнивает expr1 и expr2 к нулю и решает СЛАУ
-		sp.linsolve(Matrix(([1,-2,0],[3,1,7])),(x,y)) - аналогично предыдущему в виде матрицы
-		dsolve(Eq(y(x).diff(x,x)+y(x),exp(x)),y(x)) - дифф уравнение
+        sp.solve(expr(x), x)
+        sp.Eq(expr1,expr2) - выражение для уравнения expr1 = expr2
+        sp.solveset(equasion, var) - корни выражения для var
+        sp.real_roots(expr) аналогично sp.Eq(expr, 0)
+        sp.linsolve([expr1, expr2],x,y) - приравнивает expr1 и expr2 к нулю и решает СЛАУ
+        sp.linsolve(Matrix(([1,-2,0],[3,1,7])),(x,y)) - аналогично предыдущему в виде матрицы
+        dsolve(Eq(y(x).diff(x,x)+y(x),exp(x)),y(x)) - дифф уравнение
 
     МАТАНАЛИЗ
-		sp.limit(sin(x)/x, x, 0) - вычисление предела
-		sp.diff(sin(x)*exp(x), x, 3) - дифференциирование 3 раза
-		grad = [sp.diff(func, var) for var in [x,y,z]] - градиент по 3 коорд
-		sp.integrate(1/x, x) - вычисление первообразной
-		sp.summation(2*i-1,(i,1,12)) - сумма по i от 1 до 12 (могут быть символьные)
+        sp.limit(sin(x)/x, x, 0) - вычисление предела
+        sp.diff(sin(x)*exp(x), x, 3) - дифференциирование 3 раза
+        grad = [sp.diff(func, var) for var in [x,y,z]] - градиент по 3 коорд
+        sp.integrate(1/x, x) - вычисление первообразной
+        sp.summation(2*i-1,(i,1,12)) - сумма по i от 1 до 12 (могут быть символьные)
  
     ГРАФ ФУНКЦИИ
-		sp.textplot(expr, xmin, xmax)
+        sp.textplot(expr, xmin, xmax)
 
 # ----------------------------------------------------------------------
+SCYPY
+	import scipy as scp
+	
+	SIGNAL
+		b, a = scp.signal.butter(N=, Wn=, btype=, output=) - конфигурация фильтра Баттерворта
+			N - порядок фильтра
+			Wn - нормализованная частота среза (Wn = 2 * частота среза / частота дискретизации)
+			btype - "lowpass", "highpass", "bandpass", "bandstop"
+			output = ‘ba’, ‘zpk’, ‘sos’ (выбрать ‘ba’)
+			b, a - числитель (b) и знаменатель (a) вектора полиномиальных коэффициентов БИХ-фильтра
+		filtedData = scp.signal.filtfilt(b, a, data) - data это массив, который надо обработать
+	
+# ----------------------------------------------------------------------
 PYGAME
-	import PyGame as pg
-	ОКНО 
-		DSURF = pg.display.set_mode(tuple) - создание окна (?)
-		DSURF.fill(colorTuple)
-		pg.display.set_caption(str)
-		pg.display.update() - поместить в mainloop
-		pg.quit() - закрыть окно 
-	ОБЪЕКТЫ
-		color = pg.Color(r,g,b)
-		fpsClock = pg.time.Clock()
-		fpsClock.tick(num)
-	ПРЯМОУГОЛЬНИК
-		rect = pg.Rect(x, y, width, height)
-		rect.right / .left / .top / .bottom - коорд границ
-		rect.centerx / .centery - коорд центра (+ сущ разные комбинации точек)
-	РИСОВАШКА
-		pg.draw.line(DSURF, colorTuple, start, end, width)
-		pg.draw.circle(DSURF, colorTuple, centTuple, rad, width)
-		pixObj = pg.PixelArray(DSURF) - работает как двойная матрица с цветами
+    import PyGame as pg
+    ОКНО 
+        DSURF = pg.display.set_mode(tuple) - создание окна (?)
+        DSURF.fill(colorTuple)
+        pg.display.set_caption(str)
+        pg.display.update() - поместить в mainloop
+        pg.quit() - закрыть окно 
+    ОБЪЕКТЫ
+        color = pg.Color(r,g,b)
+        fpsClock = pg.time.Clock()
+        fpsClock.tick(num)
+    ПРЯМОУГОЛЬНИК
+        rect = pg.Rect(x, y, width, height)
+        rect.right / .left / .top / .bottom - коорд границ
+        rect.centerx / .centery - коорд центра (+ сущ разные комбинации точек)
+    РИСОВАШКА
+        pg.draw.line(DSURF, colorTuple, start, end, width)
+        pg.draw.circle(DSURF, colorTuple, centTuple, rad, width)
+        pixObj = pg.PixelArray(DSURF) - работает как двойная матрица с цветами
     ЭВЕНТЫ
         mp = pg.mouse.get_pressed() - возвр лист с True/False по каждой кнопке на мыше
 
 # ----------------------------------------------------------------------
 PYINPUTPLUS
-	import pyinputplus as pyip 
-	pyip.inputStr()
-	pyip.inputNum()
-	pyip.inputChoice() - ?
-	pyip.inputMenu() - ?
-	pyip.inputDatetime()
-	pyip.inputYesNo(yesVal='yes', noVal='no')
-	pyip.inputBool()
-	pyip.inputEmail()
-	pyip.inputFilepath()
-	pyip.inputPassword()
-	pyip.inputCustom(func) - кастомный ввод, функция должна вызывать ошибку. если неверно, или возвращать верный вариант
-	АРГУМЕНТЫ
-		prompt='' - подсказка
-		limit=2 - лимит на количество вводов, затем вызывает ошибку
-		timeout=10 - лимит на время в секундах, затем вызывает ошибку
-		default=1010 - дефолтное значение, тогда limit и timeout не вызовут ошибку
+    import pyinputplus as pyip 
+
+    pyip.inputStr()
+    pyip.inputNum()
+    pyip.inputChoice() - ?
+    pyip.inputMenu() - ?
+    pyip.inputDatetime()
+    pyip.inputYesNo(yesVal='yes', noVal='no')
+    pyip.inputBool()
+    pyip.inputEmail()
+    pyip.inputFilepath()
+    pyip.inputPassword()
+    pyip.inputCustom(func) - кастомный ввод, функция должна вызывать ошибку. если неверно, или возвращать верный вариант
+    АРГУМЕНТЫ
+        prompt='' - подсказка
+        limit=2 - лимит на количество вводов, затем вызывает ошибку
+        timeout=10 - лимит на время в секундах, затем вызывает ошибку
+        default=1010 - дефолтное значение, тогда limit и timeout не вызовут ошибку
 
 # ----------------------------------------------------------------------
 PYSIMPLEGUI
-	import PYSimpleGUI as sg
-	sg.theme("DarkBlue3") - задаст тему
-	lauout = [
-		[sg.Text("text"), sg.InputText()],
-		[sg.Botton("text"),sg.Botton("Cancel")]
-		]
-	window = sg.Window("Title",layout)
-	while True:
-		event,values = window.read()
-		if event in (None,"Cancel"):
-			break
-		sg.Popup("text1","text2")
-	window.close()
-	values[N] - вернет значение из sg.InputText(), индекс начинается с 0
+    ELEMENTS
+        sg.Text() / sg.T() - прст текст
+        sg.Input() / sg.I() - ввод
+        sg.Button() / sg.B() - кнопка
+        sg.Ok() / sg.Cencel(), sg.Submit() - такие же кнопки, как и sg.Button()
+        sg.Image(data=image_var, enable_events=True, key='') - image_var это base64
+
+    ПЯТЬ БАЗОВЫХ ЧАСТЕЙ:
+        #1 - импорт
+        import PySimpleGUI as sg
+
+        #2 - лейаут
+        sg.theme("DarkBlue3") - задаст тему
+        layout = [[sg.Text('text'), sg.Input(key='-INPUT-')],
+                  [sg.Text(key='-OUTPUT-')],
+                  [sg.Botton('OK'), sg.Botton('Cancel')]]
+
+        #3 - созать окно
+        window = sg.Window("Title", layout)
+
+        #4 - цикл эвентов
+        while True:
+            event, values = window.read()
+            if event in (None,'Cancel'):
+                break
+        
+        #5 - закрытие окна
+        window.close()
+    
+    ONE SHOT WINDOW 
+        event, values = sg.Window("Title", layout).read(close=True) - close=True включает автозакрытие после команды read
+        sg.Popup("text1","text2")
+    
+    UPDATE ELEMENT
+        window['-OUTPUT-'].update(values['-INPUT-']) - ключём вызываем элемент window и обновляем его, передав ему элемент из values
+            так можно обновлять не только текст, но и любые другие параметры элемента на окне 
+
+    НЮАНСЫ
+        sg.Botton("text", bind_return_key=True) - bind_return_key=True связывает Энтр с нажатием клавиши
+        sg.Input(key='-INPUT1-') - key='-INPUT1-' это ключ к словарю values
+        values[N] - вернет значение из sg.InputText(), индекс начинается с 0
+
+    sg.Window()
+        keep_on_top=True
+        no_titlebar=True 
+        grab_anywhere=True
+        alpha_channel=0.8
 
 # ----------------------------------------------------------------------
 PYINSTALLER
-	Конвертировать .py в .exe
-	pyinstaller path
-		-w - отключает командную строку 
-		-F - не будет генерировать кучу файлов, только .exe
-		-i path - задаст иконку по пути path
-
+    Конвертировать .py в .exe
+    pyinstaller path
+        -w - отключает командную строку 
+        -F - не будет генерировать кучу файлов, только .exe
+        -i path - задаст иконку по пути path
 
 # ----------------------------------------------------------------------
 SNAKEVIZ
-	python -m cProfile -o program.prof my_program.py - в cmd, создает профиль 
-	python -m snakeviz program.prof - в cmd, анализирует профиль 
+    python -m cProfile -o program.prof my_program.py - в cmd, создает профиль 
+    python -m snakeviz program.prof - в cmd, анализирует профиль 
 
 # ----------------------------------------------------------------------
 ITERTOOLS
-	import itertools
-	range(num) - пройдется по всем от 0 до num один раз 
-	cycle(num) - пройдется по всем от 0 до num бесконечность раз
-	list(permutations(input_list)) - возвращает все возможные комбинации (с повторениями) элементов из input_list
-	list(combinations(input_list)) - возвращает все возможные комбинации (без повторений) элементов из input_list
-	list(accumulate(input_list)) - лист из сумм первых членов
+    import itertools
+    range(num) - пройдется по всем от 0 до num один раз 
+    cycle(num) - пройдется по всем от 0 до num бесконечность раз
+    list(permutations(input_list)) - возвращает все возможные комбинации (с повторениями) элементов из input_list
+    list(combinations(input_list)) - возвращает все возможные комбинации (без повторений) элементов из input_list
+    list(accumulate(input_list)) - лист из сумм первых членов
 
 # ----------------------------------------------------------------------
 DATETIME
-	import datetime as dt
-	dt.datetime.now() - 2000-01-06 15:08:24....
-	dt.datetime.year/month/day/hour/minute/second (???)
+    import datetime as dt
+    dt.datetime.now() - 2000-01-06 15:08:24....
+    dt.datetime.year/month/day/hour/minute/second (???)
 
 # ----------------------------------------------------------------------
 ASYNCIO
 Асинхронность - программа может выполнять несколько шагов независимо друг от друга
-	import asyncio 
+    import asyncio 
 
-	COROUTINE - часть программы, которая может выполняться асинхронно
-		async def funcName(): - создание асинхронной функции, не может быть вызвана так же, как обычная функция
-			...
-		
-		asyncio.run(funcName()) - вызывает асинхронную функцию
+    COROUTINE - часть программы, которая может выполняться асинхронно
+        async def funcName(): - создание асинхронной функции, не может быть вызвана так же, как обычная функция
+            ...
+        
+        asyncio.run(funcName()) - вызывает асинхронную функцию
 
-		async def funcName():
-			await asyncio.sleep(1) - await может быть вызван только внутри асинхронной функции
-		
-	TASK
-		task1 = asyncio.create_task(funcName()) - вызывается асинх. функция
-		await task - программа ждёт, пока выполнится task
-		returned = await task1 - переменной returned будет присвоено то, что будет возвращать асинх. функция 
-		await task1 - в случае с task, await не вызывает task1, а говорит программе, что надо дождаться 
-			выполенния, прежде чем начать другую
+        async def funcName():
+            await asyncio.sleep(1) - await может быть вызван только внутри асинхронной функции
+        
+    TASK
+        task1 = asyncio.create_task(funcName()) - вызывается асинх. функция
+        await task - программа ждёт, пока выполнится task
+        returned = await task1 - переменной returned будет присвоено то, что будет возвращать асинх. функция 
+        await task1 - в случае с task, await не вызывает task1, а говорит программе, что надо дождаться 
+            выполенния, прежде чем начать другую
 
 # ----------------------------------------------------------------------
 OS
-	import os
-	os.rename("path1.png","path2.png") - переместит и переименует файл
-	os.remove("path1.png")
-	dir = os.path.abspath(os.curdir) - адрес, где запущен скрипт
-	os.chdir(path) - смена текущей директории
+    import os
+    os.rename("path1.png","path2.png") - переместит и переименует файл
+    os.remove("path1.png")
+    dir = os.path.abspath(os.curdir) - адрес, где запущен скрипт
+    os.chdir(path) - смена текущей директории
 
 # ----------------------------------------------------------------------
 SHUTIL
-	import shutil
-	shutil.move("path1.png","path2.png")
+    import shutil
+    shutil.move(path1,path2) 
+		Если path1-файл, path2-существующая папка: перемещение файла в папку path2
+		Если path1 и path2 - папки: перемещение и переименовывание файла
 
 # ----------------------------------------------------------------------
 COLORED TEXT
-	from termcolor import colored
-	print(colored("text","red"))
+    from termcolor import colored
+    print(colored("text","red"))
 
 # ----------------------------------------------------------------------
 PIL
-	from PIL import Image
-	img = Image.open(path)
-	img.show()
+    from PIL import Image
+    img = Image.open(path)
+    img.show()
 
 # ----------------------------------------------------------------------
 Конвертировать фото в лист и обратно (NumPy,PIL.Image)
-	Image -> array:
-		img = Image.open(path)
-		imga = np.array(img)
-	Array -> image:
-		im = Image.fromarray(np.unit8(imga))
+    Image -> array:
+        img = Image.open(path)
+        imga = np.array(img)
+    Array -> image:
+        im = Image.fromarray(np.unit8(imga))
